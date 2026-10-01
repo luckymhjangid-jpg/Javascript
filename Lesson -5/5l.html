@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5l</title>
+</head>
+<body>
+      <button id="one"></button>
+    <button id="two"></button>
+   <button id="three"></button>
+    <button id="add"></button>
+    <button id="equal"></button>
+    
+  <script>
+        let one =document.getElementById('one');
+        let two =document.getElementById('two');
+        let three = document.getElementById('three');
+        let add = document.getElementById('add');
+        let equal =document.getElementById('equal');
+         
+
+  
+       one.innerHTML="1";
+       two.innerHTML="2";
+       three.innerHTML="3";
+       add.innerHTML="+";
+       equal.innerHTML="=";
+    
+        
+  
+
+
+     
+         let calculation= ' ';
+
+     one.onclick=()=>{
+        calculation=calculation+'1';
+        console.log(calculation);
+     }
+
+      two.onclick=()=>{
+        calculation=calculation+'3';
+        console.log(calculation);
+     }
+
+
+    
+
+
+     three.onclick=()=>{
+        calculation=calculation+ '3';
+        console.log(calculation);
+     }
+
+
+        add.onclick=()=>{
+        calculation = calculation + ' +';
+        console.log(calculation);
+        }
+
+
+        equal.onclick= ()=>{
+            calculation=eval(calculation);
+            console.log(calculation);
+        }
+       
+  </script>
+
+
+
+</body>
+</html>
