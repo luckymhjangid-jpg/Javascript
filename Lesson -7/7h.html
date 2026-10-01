@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7h</title>
+</head>
+<body>
+    <script>
+           function convertLength(length, from , to){
+        
+         let kilometers=length*0.6213712;
+            if(from === 'miles' &&  to === 'kilometers'){
+                    let miles = length *1.60934;
+                console.log(`${miles} kilometers`);
+            }
+            else if(from === 'kilometers' && to ==='miles'){
+                   let kilometers=length*0.6213712;
+                console.log(`${kilometers} miles`);
+            }
+            else  if(from === 'miles' &&  to === 'feet'){
+                    let feet =length*5280;
+                console.log(`${feet} feet`);
+            } 
+
+            else if(from === 'feet' &&  to === 'miles'){
+                let miles  = length*0.0001893939;
+                console.log(`${miles} miles`);
+            }
+            else if(from === 'feet' && to === 'kilometers'){
+                let kilometers =length*0.0003048;
+                console.log(`${kilometers} kilometers`);
+            }
+            else if(from === 'kilometers' && to ==='feet'){
+              let kilometeres =length*3281;
+              console.log(`${kilometeres} feet`);
+            } 
+          
+           }
+
+           convertLength(5,'feet','kilometers');
+    </script>
+</body>
+</html>

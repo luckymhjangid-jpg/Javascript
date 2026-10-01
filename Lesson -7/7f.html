@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7f</title>
+</head>
+<body>
+    <script>
+        function convertTemperature(number,unit){
+             let Fahrenhiet=number;
+             let celsius  =number;
+           if(unit ==='C'){
+          
+             let celsius =(Fahrenhiet -32)*5/9;
+            console.log(`The conversion of fahrenhiet into celsius is ${celsius}`);
+           }
+           else if(unit ==='F'){
+          
+             let fahrenhiet =(celsius *9/5)+32;
+            console.log(`The conversion of celsius into fahrenhiet is ${fahrenhiet}`);
+           }
+           else{
+            console.log("wrong input");
+           }
+        }
+
+        convertTemperature(95,'F');
+         convertTemperature(36,'C');
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7g</title>
+</head>
+<body>
+    <script>
+           function convertLength(length, from , to){
+        
+         let kilometers=length*0.6213712;
+            if(from === 'miles' &&  to === 'kilometers'){
+                    let miles = length *1.60934;
+                console.log(`${miles} kilometers`);
+            }
+            else if(from === 'kilometers' && to ==='miles'){
+                console.log(`${kilometers} miles`);
+                 let kilometers=length*0.6213712;
+            }
+            else{
+                console.log("wrong input");
+            }
+           }
+
+           convertLength(4,'miles','kilometers');
+    </script>
+</body>
+</html>
