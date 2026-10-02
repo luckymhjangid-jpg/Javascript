@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6l</title>
+</head>
+<body>
+    <p id="title"></p>
+    <p id="price"></p>
+    <button id="cart"></button>
+    <button id="buynow"></button>
+   <button id="Addtwo"></button>
+    <button id="Addfive"></button>
+    <button id="remove"></button>
+    <button id="remtwo"></button>
+    <button id="remfive"></button>
+  
+
+    <script>
+        let quantity=0;
+        let title =document.getElementById('title');
+        let price =document.getElementById('price');
+        let cart = document.getElementById('cart');
+        let buy = document.getElementById('buynow');
+        let addtwo = document.getElementById('Addtwo');
+        let addfive = document.getElementById('Addfive');
+        let remtwo = document.getElementById('remtwo');
+        let remfive = document.getElementById('remfive');
+        let remove=document.getElementById('remove'); 
+     let btns = document.querySelectorAll('button');
+
+       remove.innerHTML="Remove from the cart";
+
+
+        title.innerHTML="Adult Plain Cotton T-shirt";
+        price.innerHTML="Price :$7.99";
+        cart.innerHTML="Add to cart";
+        buy.innerHTML="Buy Now";
+        addtwo.innerHTML="+2";
+        addfive.innerHTML="+5";
+        remtwo.innerHTML="-2";
+        remfive.innerHTML="-5";
+      
+      
+
+        title.style.fontSize='20px';
+     cart.style.backgroundColor='red';
+
+            cart.innerHTML ="Add to cart";
+           cart.style.height='35px';
+           cart.style.width='80px';
+            cart.style.border='none';
+              
+       
+        buy.innerText="Buy now";
+        buy.style.background='yellow';
+        buy.style.height='35px';
+        buy.style.width='80px';
+        buy.style.border='none';
+        
+        function btn(name,text){
+            name.onclick =() =>{
+                quantity=quantity+text;
+
+
+              if(quantity <0){
+                alert("Not enough items in the cart");
+                return;
+              }
+              else if(quantity >10){
+                alert("The cart is full");
+                return;
+              }
+               else {
+                quantity=quantity;
+                console.log(quantity);
+               }
+              }
+        }
+
+    btn(addtwo,2);
+    btn(addfive,5);
+    btn(remtwo,-2);
+    btn(remfive,-5);    
+    btn(remove,-1);
+
+  
+
+   
+    </script>
+</body>
+</html>

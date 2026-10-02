@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>5l</title>
+    <title>7j</title>
 </head>
 <body>
       <button id="one"></button>
@@ -11,8 +11,16 @@
    <button id="three"></button>
     <button id="add"></button>
     <button id="equal"></button>
+   <button id="four"></button>
+    <button id="five"></button>
+    <button id="six"></button>
+    <button id="seven"></button>
+    <button id="eight"></button>
+    <button id="nine"></button>
+    <button id="zero"></button>
     
   <script>
+      let calculation= '';
         let one =document.getElementById('one');
         let two =document.getElementById('two');
         let three = document.getElementById('three');
@@ -25,8 +33,9 @@
          let eight =document.getElementById('eight');
          let nine =document.getElementById('nine');
          let zero =document.getElementById('zero');
-         
+    
 
+  
   
      
            
@@ -34,6 +43,9 @@
         function input(text,draw){
          text.innerHTML=draw;
         }
+
+
+
        input(one,'1');
        input(two,'2'); 
        input(three,'3');
@@ -47,7 +59,13 @@
        input(nine,'9');
        input(zero,'0');
      
-         let calculation= ' ';
+         function updatecalc(value){
+           calculation = calculation + value;
+          console.log(calculation);
+        }
+
+
+      
 
      one.onclick=()=>{
           updatecalc('1');
@@ -72,16 +90,16 @@
 
 
         equal.onclick= ()=>{
-          updatecalc('=')
+          calculation = eval(calculation);
+          console.log(calculation);
+
         }
+
 
 
         
 
-        function updatecalc(value){
-          let calculation = calculation + '';
-          console.log(calculation);
-        }
+      
   </script>
 
 
