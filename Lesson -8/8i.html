@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8i</title>
+</head>
+<body>
+
+    <button id="heads"></button>
+    <button id="tails"></button>
+    <script>
+        let heads = document.getElementById('heads');
+        let tails =document.getElementById('tails');
+        let guess;
+
+        heads.innerHTML = "Heads";
+        tails.innerHTML = "tails";
+    function random(guess){
+        let random = Math.random();
+        (0<= random && random <=0.5 ? result="heads" : result ="tails");
+        (guess === result ? console.log("Your Guess is correct") :console.log("Your Guess is incorrect"));
+ 
+
+    }
+      heads.onclick =() => {
+        guess ="heads";
+        random(guess);
+      }
+      tails.onclick = () =>{
+        guess="tails";
+        random(guess);
+      }
+   
+    </script>
+</body>
+</html>
