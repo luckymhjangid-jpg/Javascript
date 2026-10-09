@@ -10,6 +10,13 @@
     <button id="heads"></button>
     <button id="tails"></button>
     <script>
+
+      const score= {
+       win:0,
+       losses:0
+      };
+
+
         let heads = document.getElementById('heads');
         let tails =document.getElementById('tails');
         let guess;
@@ -20,7 +27,14 @@
         let random = Math.random();
         (0<= random && random <=0.5 ? result="heads" : result ="tails");
         (guess === result ? console.log("Your Guess is correct") :console.log("Your Guess is incorrect"));
- 
+          
+        if(guess === result){
+            score.win++;
+        }
+        else{
+            score.losses++;
+        }
+        console.log(score)
 
     }
       heads.onclick =() => {
