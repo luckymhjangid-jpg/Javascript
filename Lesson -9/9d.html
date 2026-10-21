@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9d</title>
+</head>
+<body>
+    <input type="text"  id="input"/>
+    <button id="submit"></button>
+    <p id ="para"></p>
+    <script>
+      let button = document.querySelector('#submit');
+      let inputt = document.querySelector('#input');
+      let para = document.querySelector('#para')
+
+      button.innerHTML ="Submit";
+      inputt.innerHTML ="Enter your Name"
+      button.style.height ="30px";
+      button.style.width = "80px";
+      inputt.style.height ="25px"
+
+      button.addEventListener("click",()=>{
+            para.innerHTML = `your name is:  ${inputt.value}`
+      })
+      
+      
+
+
+    </script>
+
+
+</body>
+</html>
