@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9f</title>
+</head>
+<body>
+    <input id =input type="text" placeholder="Name">
+    <button id = "button">Submit</button>
+    <p id = "para"></p> 
+    <script>
+        const button = document.querySelector('#button')
+        const input = document.getElementById('input')
+        const para = document.getElementById('para')
+
+     const  keyydown = ()=>{
+            para.textContent = `your name is ${input.value}`
+        }
+
+        button.addEventListener("click",keyydown);
+            
+        
+       input.addEventListener("keydown",(event)=>{
+        if(event.key =="Enter"){
+            keyydown()
+        }
+       });
+
+        
+    </script>
+</body>
+</html>
