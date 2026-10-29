@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9h</title>
+</head>
+<body>
+    <input  id="input" type="text" placeholder="type your text">
+    <p id="para"></p>
+    <script>
+        const input = document.querySelector('#input')
+        const para = document.getElementById("para")
+        input.addEventListener("keyup",(event)=>{
+            if(event.key =="Enter"){
+            para.textContent = input.value
+            }
+        });
+
+    </script>
+</body>
+</html>
