@@ -19,6 +19,7 @@
       <button  class="btn"  id="add"></button>
     <button   class="btn"  id="sub"></button>
       <button   class="btn" id="zero"></button>
+      <button id="clear"></button>
      
       <script>
        
@@ -26,6 +27,8 @@
         let calculation = localStorage.getItem('calculation') || '';
          let buttons = document.querySelectorAll(".btn");
          let equal = document.getElementById('equal');
+         let clear = document.getElementById('clear');
+         
       
          function draw(name,value){
             name.innerHTML = value;
@@ -43,20 +46,27 @@
       draw(add,'+');
       draw(sub,'-');
       draw(equal,'=');
+      draw(clear,'clear')
+
+
 
 
 
  buttons.forEach((btn) =>{
        btn.addEventListener("click", ()=>{
-          calculation = calculation +btn.innerHTML;
+          calculation = calculation + btn.innerHTML;
           console.log(calculation);
+          
        })
  });
-    
+     
+      
+     
      equal.onclick = () =>{
         calculation =eval(calculation);
         console.log(calculation);
         localStorage.setItem('calculation', calculation);
+        
      }
   
       </script>
