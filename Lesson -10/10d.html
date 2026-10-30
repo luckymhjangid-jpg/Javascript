@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10d</title>
+</head>
+<body>
+    <button class="js-button"></button>
+    <script>
+        const button = document.querySelector('.js-button');
+
+
+        button.textContent='Gaming';
+        button.style.height = '50px';
+        button.style.width = '100px';
+        button.style.color ='black';
+        button.style.backgroundColor ='rgb(255,216,20)';
+        button.style.border ='none';
+        button.style.borderRadius ='8px';
+        button.style.fontSize ='20px';
+
+
+
+        button.addEventListener("click",()=> {
+            if(button.classList.contains('is-toggled')){
+                button.setAttribute("class","js-button");
+                button.style.backgroundColor ='black';
+                button.style.color ='white'
+                console.log(button.getAttribute("class"))
+                
+                
+            }
+           else if(button.classList.contains('js-button')){
+                    button.style.color ='black';
+                    button.style.backgroundColor ='rgb(255,216,20)';
+                    button.setAttribute("class","is-toggled");
+                    console.log(button.getAttribute("class"))
+           }
+
+            
+        })
+        
+
+    </script>
+</body>
+</html>
