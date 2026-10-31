@@ -1,0 +1,175 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10e</title>
+</head>
+<body>
+ <div id="div">
+    <gaming id="gaming" class="btn"></button>
+    <gaming id="music" class="btn"></button>
+    <gaming id="tech"  class="btn"></button>
+ </div>
+    <style>
+        body{
+            justify-self:center;
+            text-align: center;
+            display: flex;
+        }
+        div{
+            margin-top: 3rem;
+        }
+        #gaming{
+            margin-left: 2px;
+            
+            
+        }
+
+        #music{
+            margin-left: 3rem;
+        }
+        #tech{
+            margin-left: 3rem;
+        }
+
+    </style>
+    <script>
+        let gaming = document.querySelector('#gaming');
+        let music = document.querySelector('#music');
+        let tech = document.querySelector('#tech');
+        let buttons = document.querySelectorAll('.btn');
+
+        gaming.textContent='Gaming';
+        gaming.style.height = '80px';
+        gaming.style.width = '150px';
+        gaming.style.color ='black';
+        gaming.style.backgroundColor ='rgb(255,216,20)';
+        gaming.style.border ='none';
+        gaming.style.borderRadius ='8px';
+        gaming.style.fontSize ='20px';
+        gaming.style.padding='20px 20px';
+        
+        music.textContent='Music';
+        music.style.height = '60px';
+        music.style.width = '100px';
+        music.style.color ='yellow';
+        music.style.backgroundColor ='#15370D';
+        music.style.border ='none';
+        music.style.borderRadius ='8px';
+        music.style.fontSize ='20px';
+        music.style.padding = '20px 20px';
+
+        
+        tech.textContent='Tech';
+        tech.style.height = '60px';
+        tech.style.width = '100px';
+        tech.style.color ='#AA5E7A';
+        tech.style.backgroundColor ='#36415A';
+        tech.style.border ='none';
+        tech.style.borderRadius ='8px';
+        tech.style.fontSize ='20px';
+        tech.style.padding = '20px 20px';
+
+        function change(name,colorname,bgcolorname){
+ 
+            if(name.classList.contains('is-toggled')){
+                name.setAttribute("class","js-button")
+                name.style.color=colorname;
+                name.style.backgroundColor=bgcolorname;
+                console.log(name.getAttribute("class"));
+            }
+            else if(name.classList.contains('js-button')){
+                name.setAttribute("class","is-toggled");
+                name.style.color=colorname;
+                name.style.backgroundColor=bgcolorname;
+                console.log(name.getAttribute("class"));
+            }
+        }
+
+       gaming.addEventListener("click",()=>{
+            change(gaming,"blue","red");
+        })
+        tech.addEventListener("click",()=>{
+            change(tech,"blue","red");
+        })
+        music.addEventListener("click",()=>{
+            change(music,"blue","red");
+        })
+    </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10e</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+      font-family: sans-serif;
+    }
+
+    .container {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    
+    .btn {
+      height: 60px;
+      padding: 0 24px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    
+    #gaming {
+      background-color: rgb(255, 216, 20);
+      color: black;
+    }
+
+    #music {
+      background-color: #15370d;
+      color: yellow;
+    }
+
+    #tech {
+      background-color: #36415a;
+      color: #aa5e7a;
+    }
+
+    
+    .btn.is-toggled {
+      background-color: red !important;
+      color: blue !important;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <button id="gaming" class="btn">Gaming</button>
+    <button id="music" class="btn">Music</button>
+    <button id="tech" class="btn">Tech</button>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll('.btn');
+
+    
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        button.classList.toggle('is-toggled');
+      });
+    });
+  </script>
+</body>
+</html>
