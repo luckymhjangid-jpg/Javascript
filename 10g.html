@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10g</title>
+</head>
+<body>
+    <button id="gaming" class="js-btn"></button>
+    <button id="music" class="js-btn"></button>
+    <button id="tech"  class="js-btn"></button>
+   
+    <style>
+        body{
+            justify-self:center;
+            text-align:center;
+            display:flex;
+        }
+         #gaming{
+            margin-left: 2px;
+         }
+         #music{
+            margin-left: 3rem;
+         }
+            #tech{
+                margin-left: 3rem;
+            }
+    </style>
+
+
+    <script>
+        let gaming = document.querySelector('#gaming');
+        let music = document.querySelector('#music');
+        let tech = document.querySelector('#tech');
+
+        gaming.textContent='Gaming';
+        gaming.style.height = '60px';
+        gaming.style.width = '100px'; 
+        gaming.style.borderRadius ='8px';
+        gaming.style.fontSize ='20px';
+        gaming.style.padding='20px 20px';
+        gaming.style.border ='none';
+        gaming.style.backgroundColor ='white';
+        gaming.style.color ='black';
+        gaming.style.boxShadow = '4px 6px 12px 0px rgba(0, 0, 0, 0.2)';
+
+        music.textContent='Music';
+        music.style.height = '60px';
+        music.style.width = '100px';
+        music.style.borderRadius ='8px';
+        music.style.fontSize ='20px';
+        music.style.padding='20px 20px';
+        music.style.border ='none';
+        music.style.backgroundColor ='white';
+        music.style.color ='black';
+        music.style.boxShadow = '4px 6px 12px 0px rgba(0,0,0,0.2)';
+
+        
+        tech.textContent='Tech';
+        tech.style.height = '60px';
+        tech.style.width = '100px';
+        tech.style.borderRadius ='8px';
+        tech.style.fontSize ='20px';
+        tech.style.padding='20px 20px';
+        tech.style.border ='none';
+        tech.style.backgroundColor ='white';
+        tech.style.color ='black';
+        tech.style.boxShadow = '4px 6px 12px 0px rgba(0,0,0,0.2)';
+
+    gaming.addEventListener("click",()=>{
+            gaming.style.backgroundColor ='black';
+            tech.style.backgroundColor ='white';
+            music.style.backgroundColor ='white';
+            gaming.style.color ='white';
+            tech.style.color ='black';
+            music.style.color ='black';
+    });
+
+
+        tech.addEventListener("click",()=>{
+            tech.style.backgroundColor ='black';
+            gaming.style.backgroundColor ='white';
+            music.style.backgroundColor ='white';
+            tech.style.color ='white';
+            gaming.style.color ='black';
+            music.style.color ='black';
+    });
+
+        music.addEventListener("click",()=>{
+            music.style.backgroundColor ='black';
+            gaming.style.backgroundColor ='white';
+            tech.style.backgroundColor ='white';
+            music.style.color ='white';
+            gaming.style.color ='black';
+            tech.style.color ='black';
+    });
+    </script>
+</body>
+</html>
