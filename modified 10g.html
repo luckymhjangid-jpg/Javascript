@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modified 10g</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+      font-family: sans-serif;
+    }
+
+    .container {
+      display: flex;
+      gap: 3rem;
+    }
+
+    /* Base button styles */
+    .js-btn {
+      height: 60px;
+      width: 100px;
+      border-radius: 8px;
+      font-size: 20px;
+      border: none;
+      cursor: pointer;
+      background-color: white;
+      color: black;
+      box-shadow: 4px 6px 12px 0px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    /* Active / Toggled state */
+    .js-btn.is-toggle {
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <button id="gaming" class="js-btn">Gaming</button>
+    <button id="music" class="js-btn">Music</button>
+    <button id="tech" class="js-btn">Tech</button>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll('.js-btn');
+
+    buttons.forEach((clickedButton) => {
+      clickedButton.addEventListener('click', () => {
+        // Step 1: Remove 'is-toggle' from all buttons to reset them
+        buttons.forEach((btn) => btn.classList.remove('is-toggle'));
+
+        // Step 2: Add 'is-toggle' to the one that was clicked
+        clickedButton.classList.add('is-toggle');
+      });
+    });
+  </script>
+</body>
+</html>
