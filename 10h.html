@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10h</title>
+</head>
+<body>
+    <input id="input" type="text" placeholder="Enter the cost">
+    <p id="para" class=".red"></p>
+    <style>
+        .red{
+            color: red;
+        }
+    </style>
+    <script>
+        let cost = 0
+     const inputt = document.querySelector('#input')
+     const para = document.querySelector('#para')
+
+     inputt.addEventListener("keyup",()=>{
+        if((Number(inputt.value)) <0){
+            para.innerHTML = "Error : cost cannot be less than $0"
+            para.classList.add('red');
+        }
+        
+     })
+    </script>
+</body>
+</html>
