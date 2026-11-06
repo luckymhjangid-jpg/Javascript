@@ -16,30 +16,30 @@
          <button  class="btn f1"  id="one"></button>
          <button  class="btn f1"    id="two"></button>
          <button  class="btn f1"   id="three"></button>
-         <button  class="yellow f1"  id="add"></button>
+         <button  class="yellow f1 btn"  id="add"></button>
       </div>
 
         <div class="f2">
           <button  class="btn f2"    id="four"></button>
           <button  class="btn f2"  id="five"></button>
           <button  class="btn f2"    id="six"></button>
-          <button  class="yellow f2"  id="sub"></button>
+          <button  class="yellow f2 btn"  id="sub"></button>
         </div>
         <div class="f3">
           <button class="btn f3"    id="seven"></button>
           <button  class="btn f3"  id="eight"></button>
           <button class="btn f3"   id="nine"></button>
-          <button class="yellow f3" id="mul"></button>
+          <button class="yellow f3 btn" id="mul"></button>
 
         </div>
         <div class="f4">
            <button class="btn f4" id="zero"></button>
            <button class="btn f4" id="dot"></button>
-           <button  id="equal" class="btn f4"></button>
-           <button class="yellow f4" id="div"></button>
+           <button  id="equal" class="f4"></button>
+           <button class="yellow f4 btn" id="div"></button>
         </div>
         
-        <button id ="clear" class="btn"></button>
+        <button id ="clear"></button>
 
     <p id="para"></p>
 
@@ -51,8 +51,33 @@
 
       #clear{
         font-size: 20px;
+            height: 58px;
+            width: 58px;
+            border-radius: 50%;
+            border: none;
+            padding-top: 15px;
+            margin-left: 10px;
+            display: flex;
+            justify-content: center; 
+            text-align:center;
+            background-color: #333333;
+            color:white;
       }
         .btn{
+            height: 58px;
+            width: 58px;
+            border-radius: 50%;
+            border: none;
+            padding-top: 15px;
+            margin-left: 10px;
+            font-size: 22px;
+             display: flex;
+            justify-content: center; 
+            text-align: center;
+            background-color: #333333;
+            color:white;
+        }
+        #equal{
             height: 58px;
             width: 58px;
             border-radius: 50%;
@@ -77,7 +102,6 @@
             text-align:center;
             padding-top: 13px;
             justify-content: center;
-
             background-color: #FEA00A;
             color:white;
           
@@ -94,8 +118,12 @@
          #input{
           border-radius: 28px;
           border: 1px solid yellow;
-          border-width: 2px;
-         
+          border-width: 1px;
+          font-size: 30px;
+         }
+         #para{
+          color:white;
+          font-size: 20px;
          }
         .f1{
           margin-top: 10px;
@@ -130,8 +158,6 @@
         #clear{
           margin-left: 14rem;
           margin-top: 10px;
-
-          
         }
 
 
@@ -143,7 +169,6 @@
         let calculation =localStorage.getItem('calculation' || '');
         let buttons = document.querySelectorAll(".btn");
         let equal = document.getElementById('equal');
-        let para = document.getElementById('para');
         let clear = document.getElementById('clear');
         let mul = document.getElementById('mul');
         let dot = document.getElementById('dot');
@@ -187,23 +212,25 @@
       buttons.forEach((btn)=>{
         btn.addEventListener("click" ,()=>{
             calculation = calculation + btn.innerHTML;
+            input.value = calculation;
             console.log(calculation);
-            para.textContent = calculation
         })
       });
-      equal.onclick = () =>{
+      equal.addEventListener("click",()=>{
         calculation = eval(calculation);
-        console.log(calculation);
-        localStorage.setItem('calculation' ,calculation)
-        para.textContent = calculation
-      }
-      clear.addEventListener("click",()=>{
-        localStorage.setItem('calculation' , calculation = " ")
-      para.textContent = calculation
+        localStorage.setItem('calculation' ,calculation);
+        input.value = calculation;
+       console.log(calculation);
       });
-      document.addEventListener("DOMContentLoaded" , ()=>{
-           para.textContent = calculation;
+      clear.addEventListener("click",()=>{
+        localStorage.setItem('calculation' , calculation = "");
+      input.value = calculation;
+      console.log(calculation);
+      });
+      document.addEventListener("DOMContentLoaded",()=>{
+      input.value = calculation;
+      console.log(calculation);
       });
       </script>
-</body>
+</body>r 
 </html>
