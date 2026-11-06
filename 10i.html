@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10i</title>
+</head>
+<body>
+          <div class="input">
+              <input type="text" name="" id="input" style="background-color: black; color: white;
+              width: 300px; height: 50px;"  >
+          </div>
+
+
+      <div class="f1">
+         <button  class="btn f1"  id="one"></button>
+         <button  class="btn f1"    id="two"></button>
+         <button  class="btn f1"   id="three"></button>
+         <button  class="yellow f1"  id="add"></button>
+      </div>
+
+        <div class="f2">
+          <button  class="btn f2"    id="four"></button>
+          <button  class="btn f2"  id="five"></button>
+          <button  class="btn f2"    id="six"></button>
+          <button  class="yellow f2"  id="sub"></button>
+        </div>
+        <div class="f3">
+          <button class="btn f3"    id="seven"></button>
+          <button  class="btn f3"  id="eight"></button>
+          <button class="btn f3"   id="nine"></button>
+          <button class="yellow f3" id="mul"></button>
+
+        </div>
+        <div class="f4">
+           <button class="btn f4" id="zero"></button>
+           <button class="btn f4" id="dot"></button>
+           <button  id="equal" class="btn f4"></button>
+           <button class="yellow f4" id="div"></button>
+        </div>
+        
+        <button id ="clear" class="btn"></button>
+
+    <p id="para"></p>
+
+    <style>
+
+      body{
+        background-color:black;
+      }
+
+      #clear{
+        font-size: 20px;
+      }
+        .btn{
+            height: 58px;
+            width: 58px;
+            border-radius: 50%;
+            border: none;
+            padding-top: 15px;
+            margin-left: 10px;
+            font-size: 22px;
+             display: flex;
+            justify-content: center; 
+            text-align: center;
+            background-color: #333333;
+            color:white;
+        }
+        .yellow{
+            height: 58px;
+            width: 58px;
+            border-radius: 50%;
+            border: none;
+            font-size: 22px;
+            margin-left: 13px;
+            display:flex;
+            text-align:center;
+            padding-top: 13px;
+            justify-content: center;
+
+            background-color: #FEA00A;
+            color:white;
+          
+        }
+
+          .input{
+          margin-top: 5px;
+          padding-top: 10px;
+          justify-content: center;
+          text-align: center;
+          margin-left: 10px;
+          
+        }
+         #input{
+          border-radius: 28px;
+          border: 1px solid yellow;
+          border-width: 2px;
+         
+         }
+        .f1{
+          margin-top: 10px;
+          display:flex;
+          flex-direction: row;
+          justify-content: center;
+          text-align: center;
+        }
+       .f2{
+          margin-top: 10px;
+          display:flex;
+          flex-direction: row;
+          justify-content: center;
+          text-align: center;
+          
+        }
+        .f3{
+          margin-top: 10px;
+          display:flex;
+          flex-direction: row;
+          justify-content: center;
+          text-align: center;
+
+        }
+        .f4{
+          margin-top: 10px;
+          display:flex;
+         flex-direction: row;
+         justify-content: center;
+         text-align: center;
+        }
+        #clear{
+          margin-left: 14rem;
+          margin-top: 10px;
+
+          
+        }
+
+
+              
+    </style>
+      <script>
+        
+        let input = document.getElementById('input')
+        let calculation =localStorage.getItem('calculation' || '');
+        let buttons = document.querySelectorAll(".btn");
+        let equal = document.getElementById('equal');
+        let para = document.getElementById('para');
+        let clear = document.getElementById('clear');
+        let mul = document.getElementById('mul');
+        let dot = document.getElementById('dot');
+        let div = document.getElementById('div');
+        let one = document.getElementById('one');
+        let two = document.getElementById('two');
+        let three = document.getElementById('three');
+        let four = document.getElementById('four');
+        let five = document.getElementById('five');
+        let six = document.getElementById('six');
+        let seven = document.getElementById('seven');
+        let eight = document.getElementById('eight');
+        let nine = document.getElementById('nine');
+        let zero = document.getElementById('zero');
+        let add = document.getElementById('add');
+        let sub =document.getElementById('sub');
+
+        function draw(name ,value){
+            name.innerHTML = value
+        }
+
+      draw(one,'1');
+      draw(two,'2');
+      draw(three,'3');
+      draw(four,'4');
+      draw(five,'5');
+      draw(six,'6');
+      draw(seven,'7');
+      draw(eight,'8');
+      draw(nine,'9');
+      draw(zero,'0');
+      draw(add,'+');
+      draw(sub,'-');
+      draw(equal,'=');
+      draw(clear,'clear');
+      draw(mul,'*');
+      draw(div,'/');
+      draw(dot,'.');
+
+
+      buttons.forEach((btn)=>{
+        btn.addEventListener("click" ,()=>{
+            calculation = calculation + btn.innerHTML;
+            console.log(calculation);
+            para.textContent = calculation
+        })
+      });
+      equal.onclick = () =>{
+        calculation = eval(calculation);
+        console.log(calculation);
+        localStorage.setItem('calculation' ,calculation)
+        para.textContent = calculation
+      }
+      clear.addEventListener("click",()=>{
+        localStorage.setItem('calculation' , calculation = " ")
+      para.textContent = calculation
+      });
+      document.addEventListener("DOMContentLoaded" , ()=>{
+           para.textContent = calculation;
+      });
+      </script>
+</body>
+</html>
