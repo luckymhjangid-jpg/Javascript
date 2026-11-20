@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12h</title>
+</head>
+<body>
+    <button id="Add">Add</button>
+    <button id="rem">Remove</button>
+    <script>
+        let number = 3;
+        let Add = document.getElementById('Add');
+        let rem = document.getElementById('rem');
+
+        Add.addEventListener("click",()=>{
+            number = number+1;
+        });
+        rem.addEventListener("click",()=>{
+            if(number <=0){
+                return
+            }
+            else{
+                number = number-1;
+            }
+        });
+
+
+      setInterval(function(){
+        if(number>0){
+            if(document.title ==='12h'){
+                document.title =`${number} new message`;
+            }
+            else{
+                document.title ='12h';
+            }
+        }
+        else{
+            document.title ='12h';
+        }
+      },2000);
+    </script>
+</body>
+</html>
