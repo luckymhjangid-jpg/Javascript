@@ -1,0 +1,1 @@
+const multiply = () =>{ return a +b;}
