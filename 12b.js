@@ -6,4 +6,3 @@ function runTwice(fun){
 runTwice(function(){
     console.log('12b');
 });
-
